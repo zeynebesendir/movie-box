@@ -1,0 +1,46 @@
+﻿<Page x:Class="MovieBox.ViewModel.Home"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:view="clr-namespace:MovieBox.View"
+      mc:Ignorable="d" 
+      Title="Home">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0"   Margin="39,0,39,0" >
+            <Grid>
+                <Image Stretch="UniformToFill"  Source="https://image.tmdb.org/t/p/w1920_and_h600_multi_faces_filter(duotone,032541,01b4e4)/zqkmTXzjkAgXmEWLRsY4UpTWCeo.jpg"/>
+            </Grid>
+            <StackPanel  Margin="44,0,44,0" VerticalAlignment="Center" >
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left">
+                    <TextBlock Text="Welcome." Style="{DynamicResource Text44Bold_WhiteOp100_WelcomeTitle}"/>
+                    <TextBlock Text="Millions of movies, TV shows and people to discover. Explore now." Style="{DynamicResource Text30Bold_WhiteOp100_WelcomeText}"/>
+                </StackPanel>
+
+
+                <Grid   HorizontalAlignment="Stretch" Margin="0,40,0,0" VerticalAlignment="Center">
+                    <TextBox x:Name="tbSearch" Height="46" Text="  Search for a movie, tv show, person....." 
+                             PreviewMouseDown="tbSearch_PreviewMouseDown"
+                             KeyUp="tbSearch_KeyUp" 
+                             LostFocus="tbSearch_LostFocus"
+                             Style="{DynamicResource SearchTextBoxStyle}" HorizontalAlignment="Stretch"/>
+
+                    <Button x:Name="btnSearch" Click="btnSearch_Click" Content="Search" Style="{DynamicResource SearchButtonStyle}" HorizontalAlignment="Right" Width="100"/>
+                </Grid>
+            </StackPanel>
+        </Grid>
+
+        <StackPanel Grid.Row="1"  >
+            <view:ContentListHorizontal x:Name="popularList"  ListTitle="Whats Popular"  Margin="39,0,39,0"  />
+            <view:ContentListHorizontal x:Name="freeList"     ListTitle="Free To Watch"  Margin="39,30,39,0"  /> 
+            <view:TrailerListHorizontal x:Name="trailerList"  ListTitle="Latest Trailers" Margin="0,30,0,0" />
+            <view:ContentListHorizontal x:Name="trendingList" ListTitle="Trending"   Margin="39,30,39,0"  />
+        </StackPanel>
+
+    </Grid>
+
+</Page>

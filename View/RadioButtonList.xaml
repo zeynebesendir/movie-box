@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="MovieBox.View.RadioButtonList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MovieBox.View"
+             mc:Ignorable="d"
+          Loaded="UserControl_Loaded">
+
+    <Border  Style="{DynamicResource ToggleGroupBorderStyle}" Background="{DynamicResource WhiteOp100}">
+        <StackPanel x:Name="spButtons" Orientation="Horizontal"   VerticalAlignment="Center"  HorizontalAlignment="Center">
+            <!--
+                <RadioButton Content="Streaming"   Style="{DynamicResource RadioButtonStyle}" GroupName="{Binding ListTitle, ElementName=userControl}" Checked="RadioButton_Checked"/>
+                <RadioButton Content="On TV"       Style="{DynamicResource RadioButtonStyle}" GroupName="{Binding ListTitle, ElementName=userControl}" Checked="RadioButton_Checked"  IsChecked="True" />
+                <RadioButton Content="For Rent"    Style="{DynamicResource RadioButtonStyle}" GroupName="{Binding ListTitle, ElementName=userControl}" Checked="RadioButton_Checked"/>
+                <RadioButton Content="In Theatres" Style="{DynamicResource RadioButtonStyle}" GroupName="{Binding ListTitle, ElementName=userControl}" Checked="RadioButton_Checked"/>
+        -->
+        </StackPanel>
+    </Border>
+
+</UserControl>

@@ -1,0 +1,46 @@
+﻿<Window x:Class="MovieBox.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        WindowState="Maximized"
+        Loaded="Window_Loaded">
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="64"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0"  Background="#032541" >
+            <Grid  Margin="0,0,80,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="170"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Height="20" Name="btnBack" Visibility="Hidden" Source="./Images/back.png"></Image>
+                <Image Grid.Column="1" Height="20" HorizontalAlignment="Left" Source="./Images/TMDB.png" PreviewMouseDown="Image_PreviewMouseDown"/>
+               
+
+                <StackPanel Grid.Column="2"  Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+                    <TextBlock Text="Movies" Padding="8"  FontSize="16"  Foreground="White" FontWeight="Bold" Margin="0,0,25,0"/>
+                    <TextBlock Text="TV Shows" Padding="8" FontSize="16"  Foreground="White" FontWeight="Bold"/>
+                </StackPanel>
+               
+                <Grid Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Right">
+                    <TextBlock Text="JoinTMDb" Padding="8" FontSize="16"  Foreground="White" FontWeight="Bold" />
+                </Grid>
+            </Grid>
+        </Grid>
+        
+        <ScrollViewer Grid.Row="1" Padding="0,0,0,0" >
+            <Frame  x:Name="mainFrame" 
+               NavigationUIVisibility="Automatic" />
+        </ScrollViewer>
+
+
+
+    </Grid>
+</Window>

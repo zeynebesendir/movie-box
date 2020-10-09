@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="ViewModel\ContentDetail.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ViewModel\ContentList.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ViewModel\Home.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ViewModel\Search.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\ContentListHorizontal.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\RadioButtonList.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\SearchItem.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\TrailerItem.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\TrailerListHorizontal.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ViewModel\ContentDetail.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ViewModel\ContentList.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ViewModel\Home.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ViewModel\Search.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ContentListHorizontal.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ContentItem.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\RadioButtonList.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\SearchItem.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\TrailerItem.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\TrailerListHorizontal.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

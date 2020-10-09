@@ -1,0 +1,397 @@
+﻿<Application x:Class="MovieBox.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:MovieBox"
+             xmlns:view="clr-namespace:MovieBox.View"
+             xmlns:common="clr-namespace:MovieBox.Common"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+
+        <!--#region  Data Templates -->
+        <DataTemplate x:Key="MovieItem">
+            <view:ContentItem  />
+        </DataTemplate>
+
+        <DataTemplate x:Key="TrailerItem">
+            <view:TrailerItem  />
+        </DataTemplate>
+
+        <DataTemplate x:Key="ContentListHorizontal">
+            <view:ContentListHorizontal  />
+        </DataTemplate>
+
+        <!--#endregion-->
+
+        <!--#region Colours -->
+
+        
+        <SolidColorBrush x:Key="BlackOp100" Color="#FF000000"/>
+
+        <SolidColorBrush x:Key="NavyOp100" Color="#FF032541"/>
+        <Color           x:Key="NavyOp100_RGB" R="3" G="37" B="65"/>
+        
+        <SolidColorBrush x:Key="WhiteOp100" Color="#FFFFFF"/>
+
+        <SolidColorBrush x:Key="GreenOp100" Color="#FF1CD3AD"/>
+
+        <SolidColorBrush x:Key="BlueOp100" Color="#FF03B6E2"/>
+
+        <SolidColorBrush x:Key="GrayOp100" Color="#FF7D7D7D"/>
+
+        <!--#endregion-->
+
+        <!--#region Text Styles -->
+
+        <Style x:Key="Text15Bold_BlackOp100_Title" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Ariel"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="{StaticResource BlackOp100}"/>
+            <Setter Property="TextWrapping" Value="WrapWithOverflow" />
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <Style x:Key="Text15Regular_BlackOp100_Title" TargetType="TextBlock" BasedOn="{StaticResource Text15Bold_BlackOp100_Title}">
+            <Setter Property="FontWeight" Value="Regular"/>
+            <Setter Property="TextWrapping" Value="NoWrap" />
+
+        </Style>
+
+        <Style x:Key="Text18SemiBold_BlackOp100_Title" TargetType="TextBlock" BasedOn="{StaticResource Text15Bold_BlackOp100_Title}">
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
+
+        <Style x:Key="Text21Bold_BlackOp100_CategoryTitle" TargetType="TextBlock" BasedOn="{StaticResource Text15Bold_BlackOp100_Title}">
+            <Setter Property="FontSize" Value="21"/>
+        </Style>
+
+        <Style x:Key="Text30Bold_WhiteOp100_WelcomeText" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="{StaticResource WhiteOp100}"/>
+        </Style>
+
+        <Style x:Key="Text44Bold_WhiteOp100_WelcomeTitle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="44"/>
+            <Setter Property="FontWeight" Value="ExtraBold"/>
+            <Setter Property="Foreground" Value="{StaticResource WhiteOp100}"/>
+        </Style>
+
+        <Style x:Key="Text14Light_GrayOp100_Date" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Ariel"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Light"/>
+            <Setter Property="Foreground" Value="{StaticResource GrayOp100}"/>
+        </Style>
+
+
+        <Style x:Key="Text15Bold_WhiteOp100_Title" TargetType="TextBlock" BasedOn="{StaticResource Text15Bold_BlackOp100_Title}">
+            <Setter Property="Foreground" Value="{StaticResource WhiteOp100}"/>
+        </Style>
+
+        <Style x:Key="Text15Regular_WhiteOp100_Title" TargetType="TextBlock" BasedOn="{StaticResource Text15Regular_BlackOp100_Title}">
+            <Setter Property="Foreground" Value="{StaticResource WhiteOp100}"/>
+        </Style>
+
+        <Style x:Key="Text20Bold_WhiteOp100_Title" TargetType="TextBlock" BasedOn="{StaticResource Text15Regular_WhiteOp100_Title}">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+
+        <!--#endregion-->
+
+        <!--#region Component Styles-->
+
+        <!-- TOGGLE GROUP BORDER STYLE -->
+        <Style x:Key="ToggleGroupBorderStyle" TargetType="Border">
+            <Setter Property="BorderBrush" Value="{StaticResource NavyOp100}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="15"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+
+        <!-- SEARCHBOX STYLE -->
+        <SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3"/>
+        <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>
+        <SolidColorBrush x:Key="TextBox.Focus.Border" Color="#FF569DE5"/>
+        <Style x:Key="SearchTextBoxStyle" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border}"/>
+            <Setter Property="Foreground" Value="#767676"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="TextElement.FontSize" Value="16"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="AllowDrop" Value="true"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="border" CornerRadius="24" Padding="10,0,0,0" TextBlock.FontWeight="UltraLight" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="True">
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.Focus.Border}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsInactiveSelectionHighlightEnabled" Value="true"/>
+                        <Condition Property="IsSelectionActive" Value="false"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="FocusVisual3">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" SnapsToDevicePixels="true" StrokeThickness="1" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <SolidColorBrush x:Key="Button.Static.Background2" Color="#10C5C6"/>
+        <SolidColorBrush x:Key="Button.Static.Border2" Color="#10C5C6"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background2" Color="#10C5C6"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border2" Color="#10C5C6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background2" Color="#10C5C6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border2" Color="#10C5C6"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background2" Color="#10C5C6"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border2" Color="#10C5C6"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground2" Color="#FF838383"/>
+        <LinearGradientBrush x:Key="ButtonBackground" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop  Color="#1CD3AD" Offset="0"/>
+            <GradientStop Color="#03B6E2" Offset="1"/>
+        </LinearGradientBrush>
+        <Style x:Key="SearchButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual3}"/>
+            <Setter Property="Background" Value="{StaticResource ButtonBackground}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border2}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="24" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" TextBlock.FontWeight="Bold" TextBlock.FontSize="16px" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="TextElement.Foreground" TargetName="border" Value="#032541"/>
+                                <Setter Property="Cursor" TargetName="border" Value="Hand"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background2}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border2}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background2}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border2}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground2}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+
+        <!-- CIRCULAR PROGRESSBAR STYLE -->
+        <common:DoubleToPctConverter x:Key="dblToPct"/>
+        <Style x:Key="pbarCircularStyle" TargetType="{x:Type ProgressBar}">
+            <Setter Property="Foreground" Value="#21D07A"/>
+            <Setter Property="Maximum" Value="100"/>
+            <Setter Property="Height" Value="100"/>
+            <Setter Property="Width" Value="38"/>
+            <Setter Property="Height" Value="38"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ProgressBar}">
+                        <Grid x:Name="TemplateRoot" SnapsToDevicePixels="true">
+                            <Border Background="#081C22"  CornerRadius="100" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock 
+                                   FontSize="13px" Foreground="White" FontWeight="Bold"
+                                   Text="{TemplateBinding Value, Converter={StaticResource dblToPct}}" />
+                                <TextBlock Foreground="White" FontWeight="Bold" Margin="0,4,0,0">
+                                <Run BaselineAlignment="Superscript" FontSize="5">%</Run>
+                                </TextBlock>
+                            </StackPanel>
+                            <common:CircularProgress   Stroke="{TemplateBinding Foreground}" Width="34" Height="34" StrokeThickness="2" Value="{TemplateBinding Value}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+
+        <SolidColorBrush x:Key="ListBox.Static.Background" Color="#FFFFFFFF"/>
+        <SolidColorBrush x:Key="ListBox.Static.Border" Color="Transparent"/>
+        <SolidColorBrush x:Key="ListBox.Disabled.Background" Color="#FFFFFFFF"/>
+        <SolidColorBrush x:Key="ListBox.Disabled.Border" Color="#FFD9D9D9"/>
+        <Style x:Key="ListViewStyle" TargetType="{x:Type ListView}">
+            <Setter Property="Background" Value="{StaticResource ListBox.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ListBox.Static.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="Both"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListView}">
+                        <Border x:Name="Bd"  BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" Padding="1" SnapsToDevicePixels="true">
+                            <ScrollViewer   Focusable="false" Padding="{TemplateBinding Padding}">
+                                <ItemsPresenter   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                            </ScrollViewer>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="Bd" Value="{StaticResource ListBox.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource ListBox.Disabled.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="Bd" Value="Transparent" />
+                                <Setter Property="Cursor" TargetName="Bd" Value="Hand" />
+                            </Trigger>
+                            <Trigger Property="IsMouseCaptured" Value="true">
+                            </Trigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsGrouping" Value="true"/>
+                                    <Condition Property="VirtualizingPanel.IsVirtualizingWhenGrouping" Value="false"/>
+
+                                </MultiTrigger.Conditions>
+                                <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
+                            </MultiTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+
+            </Setter>
+        </Style>
+
+        <!-- LISTVIEW ITEM CONTAINER STYLE // CONTENT ITEM-->
+        <Style x:Key="ListViewItemContainerStyle_ContentItem" TargetType="{x:Type ListViewItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListViewItem}">
+                        <view:ContentItem/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- LISTVIEW ITEM CONTAINER STYLE // TRAILER ITEM-->
+        <Style x:Key="ListViewItemContainerStyle_TrailerItem" TargetType="{x:Type ListViewItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListViewItem}">
+                        <view:TrailerItem/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- LISTVIEW ITEM CONTAINER STYLE // SEARCH ITEM-->
+        <Style x:Key="ListViewItemContainerStyle_SearchItem" TargetType="{x:Type ListViewItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListViewItem}">
+                        <view:SearchItem/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- RADIOBUTTON STYLE-->
+        <Style x:Key="FocusVisual2">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" SnapsToDevicePixels="true" StrokeThickness="1" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="OptionMarkFocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="14,0,0,0" StrokeDashArray="1 2" SnapsToDevicePixels="true" StrokeThickness="1" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="RadioButton.Static.Background" Color="#FFFFFFFF"/>
+        <SolidColorBrush x:Key="RadioButton.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="RadioButton.Static.Glyph" Color="#FF212121"/>
+        <SolidColorBrush x:Key="RadioButton.MouseOver.Border" Color="#FF5593FF"/>
+        <SolidColorBrush x:Key="RadioButton.MouseOver.Glyph" Color="#FF212121"/>
+        <SolidColorBrush x:Key="RadioButton.Pressed.Border" Color="#FF3C77DD"/>
+        <SolidColorBrush x:Key="RadioButton.Pressed.Glyph" Color="#FF212121"/>
+        <SolidColorBrush x:Key="RadioButton.Disabled.Background" Color="#FFE6E6E6"/>
+        <SolidColorBrush x:Key="RadioButton.Disabled.Border" Color="#FFBCBCBC"/>
+        <SolidColorBrush x:Key="RadioButton.Disabled.Glyph" Color="#FF707070"/>
+        <Style x:Key="RadioButtonStyle" TargetType="{x:Type RadioButton}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual2}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource RadioButton.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RadioButton}">
+                        <Grid x:Name="templateRoot"  SnapsToDevicePixels="True">
+                            <Border x:Name="border"  Width="110" Height="28" Background="White" Margin="0"  BorderThickness="0" CornerRadius="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <ContentPresenter x:Name="contentPresenter" Cursor="Hand" TextBlock.FontSize="15px" TextBlock.Foreground="#032541" TextBlock.FontWeight="SemiBold" 
+                                              Focusable="False"  Margin="10,0,10,0" HorizontalAlignment="Center" VerticalAlignment="Center"  RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter Property="TextBlock.Foreground" TargetName="contentPresenter" Value="#1ED5A9"/>
+                                <Setter Property="Background" TargetName="border" Value="#032541" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!--#endregion-->
+
+
+    </Application.Resources>
+</Application>
