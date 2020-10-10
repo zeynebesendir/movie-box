@@ -10,7 +10,7 @@
     <Grid  >
         <Grid Panel.ZIndex="2">
             <Grid.Background>
-                <SolidColorBrush Color="#FF032541" Opacity="0.8"/>
+                <SolidColorBrush Color="#FF032541" Opacity="0.4"/>
             </Grid.Background>
         </Grid>
         <Grid Panel.ZIndex="1"  >

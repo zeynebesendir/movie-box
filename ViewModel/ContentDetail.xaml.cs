@@ -26,9 +26,5 @@ namespace MovieBox.ViewModel
             this.DataContext = content;
         }
 
-        private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-
-        }
     }
 }

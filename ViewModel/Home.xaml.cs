@@ -35,7 +35,6 @@ namespace MovieBox.ViewModel
             Client.Instance.MovieLayer.MoviesLoaded += MovieLayer_MoviesLoaded;
             await Client.Instance.MovieLayer.getPopularMoviesAsync();
 
-
             //FREE 
             Client.Instance.MovieLayer.StreamingLoaded += MovieLayer_StreamingLoaded;
             await Client.Instance.MovieLayer.getStreamingAsync();

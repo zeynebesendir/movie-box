@@ -28,9 +28,7 @@ namespace MovieBox.ViewModel
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
 
-
             Client.Instance.MovieLayer.MoviesLoaded += Client_MoviesLoaded;
-
         }
 
         private void Client_MoviesLoaded(object sender, EventArgs e)

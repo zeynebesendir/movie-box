@@ -52,7 +52,7 @@ namespace MovieBox.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MovieBox;V1.0.0.0;component/view/traileritem.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MovieBox;component/view/traileritem.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View\TrailerItem.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

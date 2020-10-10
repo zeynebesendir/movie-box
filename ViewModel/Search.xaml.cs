@@ -33,9 +33,5 @@ namespace MovieBox.ViewModel
 
             Client.Instance.MovieLayer.GetContentDetail(content.Id.ToString());
         }
-
-
-
-
     }
 }

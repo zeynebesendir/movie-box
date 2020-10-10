@@ -33,30 +33,38 @@ namespace MovieBox
             mainFrame.NavigationService.Navigate(new Home());
             Client.Instance.MovieLayer.ContentDetailLoaded += Instance_DetailRequested; ;
             Client.Instance.MovieLayer.SearchResultLoaded += MovieLayer_SearchResultLoaded;
-            Client.Instance.MovieLayer.BackRequested += MovieLayer_BackRequested;
-        }
-
-        private void MovieLayer_BackRequested(object sender, EventArgs e)
-        {
-        
-
         }
 
         private void MovieLayer_SearchResultLoaded(object sender, EventArgs e)
         {
-            mainFrame.NavigationService.Navigate(new Search());
+            navigate(new Search());
         }
 
         private void Instance_DetailRequested(object sender, EventArgs e)
         {
             //error control
-            mainFrame.NavigationService.Navigate(new ContentDetail((Content)sender));
+            navigate(new ContentDetail((Content)sender));
         }
 
-
-        private void Image_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        private void navigate(object sender)
         {
-
+            btnBack.Visibility = Visibility.Visible;
+            mainFrame.NavigationService.Navigate(sender);
         }
+
+        private void btnBack_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (mainFrame.NavigationService != null && mainFrame.NavigationService.CanGoBack)
+            {
+                mainFrame.NavigationService.GoBack();
+
+                if (!mainFrame.NavigationService.CanGoBack)
+                {
+                    btnBack.Visibility = Visibility.Hidden;
+                }
+            }
+        }
+
+        
     }
 }

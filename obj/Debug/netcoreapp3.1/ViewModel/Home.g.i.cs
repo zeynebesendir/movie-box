@@ -101,7 +101,7 @@ namespace MovieBox.ViewModel {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MovieBox;V1.0.0.0;component/viewmodel/home.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MovieBox;component/viewmodel/home.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\ViewModel\Home.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -3,10 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:MovieBox.View"
              mc:Ignorable="d" >
 
-    <Grid Width="300" Height="300" Margin="0,0,20,0" >
+    <Grid Width="300" Height="243" Margin="0,0,20,0" >
         <Grid.RowDefinitions>
             <RowDefinition Height="168" />
             <RowDefinition Height="*"/>

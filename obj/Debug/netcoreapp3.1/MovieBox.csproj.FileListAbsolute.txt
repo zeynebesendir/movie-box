@@ -41,4 +41,3 @@ C:\Users\ZeynebEsendir\source\repos\MovieBox\obj\Debug\netcoreapp3.1\MovieBox.cs
 C:\Users\ZeynebEsendir\source\repos\MovieBox\obj\Debug\netcoreapp3.1\MovieBox.dll
 C:\Users\ZeynebEsendir\source\repos\MovieBox\obj\Debug\netcoreapp3.1\MovieBox.pdb
 C:\Users\ZeynebEsendir\source\repos\MovieBox\obj\Debug\netcoreapp3.1\MovieBox.genruntimeconfig.cache
-C:\Users\ZeynebEsendir\source\repos\MovieBox\obj\Debug\netcoreapp3.1\MovieBox.csprojAssemblyReference.cache

@@ -60,7 +60,7 @@ namespace MovieBox.ViewModel {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MovieBox;V1.0.0.0;component/viewmodel/search.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MovieBox;component/viewmodel/search.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\ViewModel\Search.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

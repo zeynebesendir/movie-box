@@ -20,8 +20,8 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="200"/>
                 </Grid.ColumnDefinitions>
-                <Image Grid.Column="0" Height="20" Name="btnBack" Visibility="Hidden" Source="./Images/back.png"></Image>
-                <Image Grid.Column="1" Height="20" HorizontalAlignment="Left" Source="./Images/TMDB.png" PreviewMouseDown="Image_PreviewMouseDown"/>
+                <Image Grid.Column="0" Height="16" Name="btnBack" MouseDown="btnBack_MouseDown" Visibility="Hidden" Source="./Images/back.png" Cursor="Hand" VerticalAlignment="Center"></Image>
+                <Image Grid.Column="1" Height="20" HorizontalAlignment="Left" Source="./Images/TMDB.png" />
                
 
                 <StackPanel Grid.Column="2"  Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
@@ -37,7 +37,7 @@
         
         <ScrollViewer Grid.Row="1" Padding="0,0,0,0" >
             <Frame  x:Name="mainFrame" 
-               NavigationUIVisibility="Automatic" />
+               NavigationUIVisibility="Hidden" />
         </ScrollViewer>
 
 

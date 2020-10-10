@@ -53,7 +53,7 @@
                     </StackPanel>
 
                     <Border Margin="80,0,0,0" BorderBrush="White" BorderThickness="1" CornerRadius="3">
-                    <TextBlock Text=" Play Trailer" MouseDown="TextBlock_MouseDown"  Cursor="Hand" Margin="15,0" TextWrapping="NoWrap" Style="{StaticResource Text15Bold_WhiteOp100_Title}"/>
+                    <TextBlock Text=" Play Trailer"   Cursor="Hand" Margin="15,0" TextWrapping="NoWrap" Style="{StaticResource Text15Bold_WhiteOp100_Title}"/>
 </Border>
                 </StackPanel>
 

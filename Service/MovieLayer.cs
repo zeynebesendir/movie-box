@@ -21,12 +21,9 @@ namespace MovieBox.Service
         public event EventHandler ContentDetailLoaded;
         public event EventHandler SearchResultLoaded;
 
-        public event EventHandler BackRequested;
-
+  
         private Response response = new Response();
         private Content content = new Content();
-
-
 
         public List<Content> searchResult;
 
@@ -34,7 +31,6 @@ namespace MovieBox.Service
         {
 
         }
-
 
         public async Task getPopularMoviesAsync()
         {
@@ -59,12 +55,6 @@ namespace MovieBox.Service
             response = await Client.Instance.GetContentAsync("trending/all/day");
             TrendingLoaded?.Invoke(response.Results, null);
         }
-
-
-
-
-
-
 
         public async Task GetContentDetail(string id)
         {
