@@ -39,7 +39,7 @@ namespace MovieBox.Common
             Streaming,
             TV,
             Rent,
-            Theaters
+            Theatres
         }
     }
 }

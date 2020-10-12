@@ -5,7 +5,8 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:view="clr-namespace:MovieBox.View"
       mc:Ignorable="d" 
-      Title="Home">
+      Title="Home"
+      Loaded="Page_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="300"/>
@@ -23,10 +24,9 @@
 
 
                 <Grid   HorizontalAlignment="Stretch" Margin="0,40,0,0" VerticalAlignment="Center">
-                    <TextBox x:Name="tbSearch" Height="46" Text="  Search for a movie, tv show, person....." 
+                    <TextBox x:Name="tbSearch" Height="46" 
                              PreviewMouseDown="tbSearch_PreviewMouseDown"
                              KeyUp="tbSearch_KeyUp" 
-                             LostFocus="tbSearch_LostFocus"
                              Style="{DynamicResource SearchTextBoxStyle}" HorizontalAlignment="Stretch"/>
 
                     <Button x:Name="btnSearch" Click="btnSearch_Click" Content="Search" Style="{DynamicResource SearchButtonStyle}" HorizontalAlignment="Right" Width="100"/>

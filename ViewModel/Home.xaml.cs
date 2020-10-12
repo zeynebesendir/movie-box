@@ -27,6 +27,11 @@ namespace MovieBox.ViewModel
             InitializeComponent();
             GetContent();
         }
+        string strSearch="  Search for a movie, tv show, person.....";
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            tbSearch.Text = strSearch;
+        }
 
         private async void GetContent()
         {
@@ -86,16 +91,11 @@ namespace MovieBox.ViewModel
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
             string str = tbSearch.Text;
-            if (String.IsNullOrEmpty(str) || str.Equals("  Search for a movie, tv show, person....."))
+            if (String.IsNullOrEmpty(str) || str.Equals(strSearch))
                 return;
 
             search();
 
-        }
-
-        private void tbSearch_LostFocus(object sender, RoutedEventArgs e)
-        {
-            tbSearch.Text = "  Search for a movie, tv show, person.....";
         }
 
         private void tbSearch_KeyUp(object sender, KeyEventArgs e)
@@ -120,5 +120,8 @@ namespace MovieBox.ViewModel
 
         #endregion
 
+       
     }
+
+    
 }
