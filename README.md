@@ -18,7 +18,7 @@ It is developed to demonstrate:
 ### Features
 * Lists movies on four categories
 * Displays movie detail
-* Search Movies
+* Searches Movies
 
 ### Built With
 * C#
