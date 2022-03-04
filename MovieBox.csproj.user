@@ -7,31 +7,31 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="ViewModel\ContentDetail.xaml.cs">
+    <Compile Update="Pages\ContentDetail.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="ViewModel\ContentList.xaml.cs">
+    <Compile Update="Pages\ContentList.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="ViewModel\Home.xaml.cs">
+    <Compile Update="Pages\Home.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="ViewModel\Search.xaml.cs">
+    <Compile Update="Pages\Search.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\ContentListHorizontal.xaml.cs">
+    <Compile Update="Components\ContentListHorizontal.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\RadioButtonList.xaml.cs">
+    <Compile Update="Components\RadioButtonList.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\SearchItem.xaml.cs">
+    <Compile Update="Components\SearchItem.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\TrailerItem.xaml.cs">
+    <Compile Update="Components\TrailerItem.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\TrailerListHorizontal.xaml.cs">
+    <Compile Update="Components\TrailerListHorizontal.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -39,34 +39,34 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="ViewModel\ContentDetail.xaml">
+    <Page Update="Pages\ContentDetail.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="ViewModel\ContentList.xaml">
+    <Page Update="Pages\ContentList.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="ViewModel\Home.xaml">
+    <Page Update="Pages\Home.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="ViewModel\Search.xaml">
+    <Page Update="Pages\Search.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\ContentListHorizontal.xaml">
+    <Page Update="Components\ContentListHorizontal.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\ContentItem.xaml">
+    <Page Update="Components\ContentItem.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\RadioButtonList.xaml">
+    <Page Update="Components\RadioButtonList.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\SearchItem.xaml">
+    <Page Update="Components\SearchItem.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\TrailerItem.xaml">
+    <Page Update="Components\TrailerItem.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\TrailerListHorizontal.xaml">
+    <Page Update="Components\TrailerListHorizontal.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
