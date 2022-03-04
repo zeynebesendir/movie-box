@@ -1,6 +1,6 @@
 # Movie Box
 
-
+<img src="/readme.gif"  height="300"/>
 
 
 ## About The Project
